@@ -14,9 +14,16 @@ namespace Archery.Controllers
             return View();
         }
 
-		public ActionResult About()
-		{
-			return View();
-		}
+        public ActionResult About()
+        {
+            return View();
+            var modelinfo = new ConsoleKeyInfo
+            {
+                DevName = "Anne",
+                ContactMail = "anne@anne.com",
+                CreateDate = DateTime.Now
+            };
+            return View(modelinfo);
+        }
     }
 }
