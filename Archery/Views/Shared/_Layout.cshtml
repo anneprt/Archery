@@ -29,7 +29,9 @@
                     </button>
                     @*<a class="navbar-brand" href="#">Brand</a>*@
 
-                    @Html.ActionLink("Accueil", "index", "home", null, new { @class = "navbar-brand" })
+                    @*@Html.ActionLink("Accueil", "index", "home", null, new { @class = "navbar-brand" })*@
+
+                    <a class="navbar-brand" href="@Url.Action("index","home")">Home</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -39,7 +41,8 @@
                         <li>
 
                             @*<a href="~/a-propos">A propos</a>*@
-                            @Html.ActionLink("A propos", "about", "home")
+                            @*@Html.ActionLink("A propos", "about", "home")*@
+                            <a href="@Url.RouteUrl("AboutRoute")">A propos</a>
 
                         </li>
                         <li class="dropdown">
