@@ -17,6 +17,7 @@ namespace Archery.Models
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
+        [Display(Name = "Confirmation du mot de passe")]
         [DataType(DataType.Password)]
         public string ConfirmedPassword { get; set; }
 
