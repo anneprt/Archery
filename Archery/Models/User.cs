@@ -10,6 +10,7 @@ namespace Archery.Models
     {
         public int Id { get; set; }
 
+        [Required]
         [Display(Name = "Adresse mail")]
         public string Mail { get; set; }
 
