@@ -13,13 +13,17 @@ namespace Archery.Models
         [Required(ErrorMessage ="Le champ {0} est obligatoire.")]
         [StringLength(150, ErrorMessage ="Le champ {0} doit contenir {1} caractères max.")]
         [Display(Name = "Adresse mail")]
-        [RegularExpression(@""
+        [RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+                           @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                           @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
             ,ErrorMessage ="le format n'est pas bon.")]
         public string Mail { get; set; }
 
         [Required(ErrorMessage = "Le champ {0} est obligatoire.")]
         [Display(Name = "Mot de passe")]
         [DataType(DataType.Password)]
+        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{6,}$"
+        , ErrorMessage ="{0} incorrect"]
         public string Password { get; set; }
 
         [Display(Name = "Confirmation du mot de passe")]
