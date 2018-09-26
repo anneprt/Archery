@@ -10,8 +10,10 @@ namespace Archery.Models
     {
         public int Id { get; set; }
 
+        [Display(Name = "Adresse mail")]
         public string Mail { get; set; }
 
+        [Display(Name = "Mot de passe")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
@@ -21,8 +23,10 @@ namespace Archery.Models
         [Display(Name ="Nom")]
         public string LastName { get; set; }
 
+        [Display(Name = "Prénom")]
         public string FirstName { get; set; }
 
+        [Display(Name = "Date de naissance")]
         [DataType(DataType.Date)]
         public DateTime BirthDate { get; set; }
 
