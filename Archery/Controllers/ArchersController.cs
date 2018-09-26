@@ -7,6 +7,7 @@ using System.Web.Mvc;
 namespace Archery.Controllers
 {
     public class ArchersController : Controller
+
     {
         // GET: Players
         public ActionResult Subscribe()
@@ -14,6 +15,10 @@ namespace Archery.Controllers
             return View();
         }
 
-
+        [HttpPost]
+        public ActionResult Subscribe(string email)
+        {
+            return View();
+        }
     }
 }
