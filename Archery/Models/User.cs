@@ -15,8 +15,10 @@ namespace Archery.Models
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
+        [DataType(DataType.Password)]
         public string ConfirmedPassword { get; set; }
 
+        [Display(Name ="Nom")]
         public string LastName { get; set; }
 
         public string FirstName { get; set; }
