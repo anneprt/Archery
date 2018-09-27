@@ -43,7 +43,7 @@ namespace Archery.Models
         [Required(ErrorMessage = "Le champ {0} est obligatoire.")]
         [Display(Name = "Date de naissance")]
         [DataType(DataType.Date)]
-        [Age(9,ErrorMessage = "Vous devez avoir plus de 9 ans")]
+        [Age(9, MaximumAge=90,ErrorMessage = " Pour le champ {0}, vous devez avoir plus de {1} an")]
         public DateTime BirthDate { get; set; }
 
 

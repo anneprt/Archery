@@ -6,9 +6,18 @@ using System.Web;
 
 namespace Archery.Validators
 {
+    [AttributeUsage(AttributeTargets.Property)]
     public class Age :ValidationAttribute
     {
         public int MinimumAge { get; private set; }
+
+        private int? maximumAge;
+
+        public int MaximumAge
+        {
+            get { return (int)maximumAge; }
+            set { maximumAge = value; }
+        }
 
         public Age(int minimumAge)
         {
@@ -19,7 +28,11 @@ namespace Archery.Validators
         {
             if (value is DateTime)
             {
-                return DateTime.Now.AddYears(-this.MinimumAge) <= (DateTime)value;
+                if (this.maximumAge == null)
+                    return DateTime.Now.AddYears(-this.MinimumAge) >= (DateTime)value;
+                else
+                    return DateTime.Now.AddYears(-this.MinimumAge) >= (DateTime)value
+                        && ((DateTime)value).AddYears(this.MaximumAge) >= DateTime.Now;
             }
             else
                 throw new ArgumentException("le type doit être un DateTime");
