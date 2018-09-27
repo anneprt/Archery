@@ -24,5 +24,10 @@ namespace Archery.Validators
             else
                 throw new ArgumentException("le type doit être un DateTime");
         }
+
+        public override string FormatErrorMessage(string name)
+        {
+            return string.Format(this.ErrorMessage, name, this.MinimumAge.ToString());
+        }
     }
 }
