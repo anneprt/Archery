@@ -24,13 +24,13 @@ namespace Archery.Controllers
             {
                 //ViewBag.Erreur = "Date de naissance invalide";
                 // return View();
-                ModelState.AddModelError("BirthDate", "Date de naissance invalide");
+                //ModelState.AddModelError("BirthDate", "Date de naissance invalide");
             }
             if (ModelState.IsValid)
             {
                 //...
             }
-            ValidationAttribute 
+            
            
             return View();
         }
