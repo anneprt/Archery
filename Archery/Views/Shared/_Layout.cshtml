@@ -83,7 +83,7 @@
 
         <div class="container">
 
-        @if (!string.IsNullOrWhiteSpace(ViewBag.Message))
+        @if (!string.IsNullOrWhiteSpace(TempData["Message"] as string))
         {
             <div class="alert alert-success">
                 @ViewBag.Message
