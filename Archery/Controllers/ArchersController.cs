@@ -35,12 +35,18 @@ namespace Archery.Controllers
                 db.SaveChanges();
 
 
-                ViewBag.Message = "Archer Enregistré";
+                //TempData["Message"] = "Archer Enregistré";
+                Display("Archer enregistré");
                 return RedirectToAction("index", "home");
 
             }
             
             return View();
+        }
+
+        private void Display(string v)
+        {
+            throw new NotImplementedException();
         }
 
         protected override void Dispose(bool disposing)

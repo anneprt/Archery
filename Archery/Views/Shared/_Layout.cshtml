@@ -1,6 +1,8 @@
-﻿
+﻿@using Archery.Tools;
+
 @{
-    Layout = null;
+    var message = TempData["MESSAGE"] as Archery.Tools.Message;
+
 }
 
 <!DOCTYPE html>
@@ -9,7 +11,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title | Archery</title>
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" /> 
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <div class="container">
@@ -83,26 +85,27 @@
 
         <div class="container">
 
-        @if (!string.IsNullOrWhiteSpace(TempData["Message"] as string))
-        {
-            <div class="alert alert-success">
-                @ViewBag.Message
+            @if (message != null)
+            {
+                <div class="alert
+                     alert-@(message.MessageType==MessageType.SUCCESS?"success":"danger:")><!----pour utiliser le message d'alerte qqsoit le type success, error...-->
+                @message.Text
             </div>
-        }
+                }
 
-        @RenderBody()
-
-
+                @RenderBody()
 
 
-    </div>
-    <footer class="panel-footer">
-        &copy; 2018
-    </footer>
 
 
-    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-   @RenderSection("SectionScripts",false)
-</body>
+            </div>
+            <footer class="panel-footer">
+                &copy; 2018
+            </footer>
+
+
+            <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+            <script src="~/Scripts/bootstrap.min.js"></script>
+            @RenderSection("SectionScripts", false)
+    </body>
 </html>
