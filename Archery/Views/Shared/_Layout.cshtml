@@ -85,10 +85,10 @@
 
         <div class="container">
 
-            @if (message != null)
+            @if(message != null)
             {
                 <div class="alert
-                     alert-@(message.MessageType==MessageType.SUCCESS?"success":"danger:")><!----pour utiliser le message d'alerte qqsoit le type success, error...-->
+                     alert-@(message.MessageType==MessageType.SUCCESS?"success":"danger:")"><!----pour utiliser le message d'alerte qqsoit le type success, error...-->
                 @message.Text
             </div>
                 }
