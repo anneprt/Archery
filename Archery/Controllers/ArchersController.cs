@@ -33,6 +33,7 @@ namespace Archery.Controllers
             {
                 db.Archers.Add(archer);
                 db.SaveChanges();
+               
 
                 //return RedirectToAction("index", "home");
 
