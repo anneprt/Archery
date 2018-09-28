@@ -1,4 +1,5 @@
-﻿using Archery.Tools;
+﻿using Archery.Data;
+using Archery.Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,16 +11,24 @@ namespace Archery.Controllers
 {
     public abstract class BaseController : Controller
     {
+        protected ArcheryDbContext db = new ArcheryDbContext();
         /// <summary>
         /// Affiche un message dans le layout success ou erreur
         /// </summary>
         /// <param name="text">le texte à afficher</param>
         /// <param name="type">le type de message</param>
-        
+
         protected void Display(string text, MessageType type = MessageType.SUCCESS)//par defaut message success donc inutile de preciser dans l appel
         {
             var m = new Message(type, text);
             TempData["MESSAGE"] = m;
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            if (!disposing)
+                this.db.Dispose();
         }
     }
 }

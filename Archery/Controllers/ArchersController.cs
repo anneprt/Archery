@@ -9,10 +9,10 @@ using System.Web.Mvc;
 
 namespace Archery.Controllers
 {
-    public class ArchersController : Controller
+    public class ArchersController : BaseController
 
     {
-        private ArcheryDbContext db = new ArcheryDbContext();
+        
 
         // GET: Players
         public ActionResult Subscribe()
@@ -49,12 +49,7 @@ namespace Archery.Controllers
             throw new NotImplementedException();
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            base.Dispose(disposing);
-            if (!disposing)
-                this.db.Dispose();
-        }
+       
 
     }
 }

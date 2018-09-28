@@ -1,10 +1,4 @@
-﻿@using Archery.Tools;
-
-@{
-    var message = TempData["MESSAGE"] as Archery.Tools.Message;
-
-}
-
+﻿
 <!DOCTYPE html>
 
 <html>
@@ -85,27 +79,22 @@
 
         <div class="container">
 
-            @if(message != null)
-            {
-                <div class="alert
-                     alert-@(message.MessageType==MessageType.SUCCESS?"success":"danger:")"><!----pour utiliser le message d'alerte qqsoit le type success, error...-->
-                @message.Text
-            </div>
-                }
+            @Html.Partial("_PartialDisplay")
+            @* @{Html.RenderPartial("_PartialDisplay");}*@<!--les deux methodes font la meme chose elles appellent la vue partielle affichage du message-->
 
-                @RenderBody()
+            @RenderBody()
 
 
 
 
-            </div>
-            <footer class="panel-footer">
-                &copy; 2018
-            </footer>
+        </div>
+        <footer class="panel-footer">
+            &copy; 2018
+        </footer>
 
 
-            <script src="~/Scripts/jquery-3.0.0.min.js"></script>
-            <script src="~/Scripts/bootstrap.min.js"></script>
-            @RenderSection("SectionScripts", false)
-    </body>
+        <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        @RenderSection("SectionScripts", false)
+</body>
 </html>
