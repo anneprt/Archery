@@ -81,8 +81,18 @@
             </div><!-- /.container-fluid -->
         </nav>
 
+        <div class="container">
+
+        @if (!string.IsNullOrWhiteSpace(ViewBag.Message))
+        {
+            <div class="alert alert-success">
+                @ViewBag.Message
+            </div>
+        }
+
         @RenderBody()
-        
+
+
 
 
     </div>

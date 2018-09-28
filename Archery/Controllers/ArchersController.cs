@@ -33,9 +33,10 @@ namespace Archery.Controllers
             {
                 db.Archers.Add(archer);
                 db.SaveChanges();
-               
 
-                //return RedirectToAction("index", "home");
+
+                ViewBag.Message = "Archer Enregistré";
+                return RedirectToAction("index", "home");
 
             }
             

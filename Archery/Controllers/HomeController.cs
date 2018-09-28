@@ -12,6 +12,7 @@ namespace Archery.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            Session["test"] = "rtest";
             ViewData["Title"] = "Accueil";
             return View();
         }
