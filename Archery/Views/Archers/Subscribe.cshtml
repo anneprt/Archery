@@ -16,7 +16,7 @@
 @using (Html.BeginForm())
 {
 
-
+    @Html.AntiForgeryToken()
     @*@Html.ValidationSummary(null, new { @class="alert alert-danger"})*@
 
 
