@@ -19,6 +19,7 @@ namespace Archery.Models
                            @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
                            @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
             , ErrorMessage = "le format n'est pas bon.")]
+        [Email(ErrorMessage ="Un compte utilisant cette adresse mail existe déjà.")]
         public string Mail { get; set; }
 
         [Required(ErrorMessage = "Le champ {0} est obligatoire.")]
