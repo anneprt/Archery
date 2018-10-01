@@ -14,7 +14,6 @@ namespace Archery.Controllers
     public class ArchersController:BaseController
 
     {
-        
 
         // GET: Players
         public ActionResult Subscribe()
@@ -34,27 +33,23 @@ namespace Archery.Controllers
             }
             if (ModelState.IsValid)
             {
-                archer.Password = Extension.HashMD5(archer.Password);
-                archer.Password.HashMD5();
+                //archer.Password = Extension.HashMD5(archer.Password);
+                archer.Password=archer.Password.HashMD5();
+
+                db.Configuration.ValidateOnSaveEnabled = false;
                 db.Archers.Add(archer);
                 db.SaveChanges();
 
-
+                db.Configuration.ValidateOnSaveEnabled = true;
                 //TempData["Message"] = "Archer Enregistré";
                 Display("Archer enregistré");
+
                 return RedirectToAction("index", "home");
 
             }
             
             return View();
         }
-
-        private void Display(string v)
-        {
-            throw new NotImplementedException();
-        }
-
-       
 
     }
 }
