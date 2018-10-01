@@ -1,15 +1,17 @@
 ﻿using Archery.Data;
 using Archery.Models;
+using Archery.Tools;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Security.Cryptography;
 
 namespace Archery.Controllers
 {
-    public class ArchersController : BaseController
+    public class ArchersController:BaseController
 
     {
         
@@ -32,6 +34,8 @@ namespace Archery.Controllers
             }
             if (ModelState.IsValid)
             {
+                archer.Password = Extension.HashMD5(archer.Password);
+                archer.Password.HashMD5();
                 db.Archers.Add(archer);
                 db.SaveChanges();
 
