@@ -14,11 +14,19 @@ namespace Archery.Models
         public string Name { get; set; }
 
         [Required]
+        [Display(Name = "Lieu")]
+        [StringLength(250)]
+        [DataType(DataType.MultilineText)]
+        public string Location { get; set; }
+
+        [Required]
         [Display(Name = "Début")]
+        [DataType(DataType.DateTime)]
         public DateTime StartDate { get; set; }
 
         [Required]
         [Display(Name = "Fin")]
+        [DataType(DataType.DateTime)]
         public DateTime EndDate { get; set; }
 
         [Required]
