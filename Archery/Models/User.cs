@@ -9,6 +9,7 @@ using System.Web;
 namespace Archery.Models
 {
     public abstract class User:BaseModel
+
     {
         
 

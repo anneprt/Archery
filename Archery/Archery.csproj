@@ -129,6 +129,11 @@
     <Content Include="Areas\BackOffice\Views\_ViewStart.cshtml" />
     <Content Include="Areas\BackOffice\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\BackOffice\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Weapons\Create.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Weapons\Delete.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Weapons\Details.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Weapons\Edit.cshtml" />
+    <Content Include="Areas\BackOffice\Views\Weapons\Index.cshtml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -156,6 +161,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\BackOffice\BackOfficeAreaRegistration.cs" />
     <Compile Include="Areas\BackOffice\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\BackOffice\Controllers\WeaponsController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ArchersController.cs" />
@@ -170,6 +176,10 @@
     <Compile Include="Migrations\201810011501400_AjoutBackOffice.cs" />
     <Compile Include="Migrations\201810011501400_AjoutBackOffice.Designer.cs">
       <DependentUpon>201810011501400_AjoutBackOffice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810011911187_WeaponControllerCreation.cs" />
+    <Compile Include="Migrations\201810011911187_WeaponControllerCreation.Designer.cs">
+      <DependentUpon>201810011911187_WeaponControllerCreation.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrator.cs" />
@@ -230,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810011501400_AjoutBackOffice.resx">
       <DependentUpon>201810011501400_AjoutBackOffice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810011911187_WeaponControllerCreation.resx">
+      <DependentUpon>201810011911187_WeaponControllerCreation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
