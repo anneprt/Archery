@@ -181,6 +181,10 @@
     <Compile Include="Migrations\201810011911187_WeaponControllerCreation.Designer.cs">
       <DependentUpon>201810011911187_WeaponControllerCreation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810030607436_WeaponScaffolding.cs" />
+    <Compile Include="Migrations\201810030607436_WeaponScaffolding.Designer.cs">
+      <DependentUpon>201810030607436_WeaponScaffolding.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrator.cs" />
     <Compile Include="Models\BaseModel.cs" />
@@ -243,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810011911187_WeaponControllerCreation.resx">
       <DependentUpon>201810011911187_WeaponControllerCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810030607436_WeaponScaffolding.resx">
+      <DependentUpon>201810030607436_WeaponScaffolding.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
