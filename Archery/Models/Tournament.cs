@@ -14,6 +14,12 @@ namespace Archery.Models
         public string Name { get; set; }
 
         [Required]
+        [Display(Name = "Lieu")]
+        [StringLength(250)]
+        [DataType(DataType.MultilineText)]
+        public string Location { get; set; }
+
+        [Required]
         [Display(Name = "Début")]
         public DateTime StartDate { get; set; }
 
