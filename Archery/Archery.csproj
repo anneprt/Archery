@@ -325,6 +325,7 @@
     <Compile Include="Areas\BackOffice\Controllers\DashboardController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\TournamentsController.cs" />
     <Compile Include="Areas\BackOffice\Controllers\WeaponsController.cs" />
+    <Compile Include="Areas\BackOffice\Models\AuthenticationLoginViewModel.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ArchersController.cs" />
@@ -397,7 +398,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\BackOffice\Models\" />
     <Folder Include="Areas\BackOffice\Views\Authentication\" />
   </ItemGroup>
   <ItemGroup>
