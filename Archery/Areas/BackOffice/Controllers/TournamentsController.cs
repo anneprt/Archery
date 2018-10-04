@@ -58,7 +58,7 @@ namespace Archery.Areas.BackOffice.Controllers
                {
                    tournament.Weapons.Add(db.Weapons.Find(item));
                }*/
-                tournament.Weapons = db.Weapons.Where(x => WeaponsID.Contains(x.ID)).ToList();
+                //tournament.Weapons = db.Weapons.Where(x => WeaponsID.Contains(x.ID)).ToList();
 
                 db.Tournaments.Add(tournament);
                 db.SaveChanges();
