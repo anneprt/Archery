@@ -55,8 +55,20 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Description)
+            @Html.Raw(Model.Description)
         </dd>
+
+        <dt>
+            Armes
+        </dt>
+        <dd>
+            <table class="table table-striped">
+                @foreach (var item in Model.Weapons)
+                {
+                    <tr><td>@item.Name</td></tr>
+                }
+
+            </table>
 
     </dl>
 </div>
