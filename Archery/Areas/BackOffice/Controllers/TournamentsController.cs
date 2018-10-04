@@ -28,7 +28,7 @@ namespace Archery.Areas.BackOffice.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Tournament tournament = db.Tournaments.Find(id);
+            Tournament tournament = db.Tournaments.Include("Weapons").SingleOrDefault(x=>x.ID==id);
             if (tournament == null)
             {
                 return HttpNotFound();
@@ -39,6 +39,8 @@ namespace Archery.Areas.BackOffice.Controllers
         // GET: BackOffice/Tournaments/Create
         public ActionResult Create()
         {
+            MultiSelectList weaponsValues = new MultiSelectList(db.Weapons, "ID", "Name");
+            ViewBag.Weapons = weaponsValues;
             return View();
         }
 
@@ -51,10 +53,20 @@ namespace Archery.Areas.BackOffice.Controllers
         {
             if (ModelState.IsValid)
             {
+                /*tournament.Weapons = new List<Weapon>();
+               foreach (var item in WeaponsID)
+               {
+                   tournament.Weapons.Add(db.Weapons.Find(item));
+               }*/
+                tournament.Weapons = db.Weapons.Where(x => WeaponsID.Contains(x.ID)).ToList();
+
                 db.Tournaments.Add(tournament);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
+            MultiSelectList weaponsValues = new MultiSelectList(db.Weapons, "ID", "Name");
+            ViewBag.Weapons = weaponsValues;
 
             return View(tournament);
         }
