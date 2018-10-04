@@ -181,6 +181,10 @@
     <Compile Include="Migrations\201810011042376_Init.Designer.cs">
       <DependentUpon>201810011042376_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810041619003_Tournament.cs" />
+    <Compile Include="Migrations\201810041619003_Tournament.Designer.cs">
+      <DependentUpon>201810041619003_Tournament.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrator.cs" />
     <Compile Include="Models\BaseModel.cs" />
@@ -237,6 +241,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201810011042376_Init.resx">
       <DependentUpon>201810011042376_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810041619003_Tournament.resx">
+      <DependentUpon>201810041619003_Tournament.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
