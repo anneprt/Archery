@@ -49,7 +49,7 @@ namespace Archery.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Name,StartDate,EndDate,ArcherCount,Price,Description")] Tournament tournament)
+        public ActionResult Create([Bind(Include = "Name,StartDate,EndDate,ArcherCount,Price,Description")] Tournament tournament, int[] WeaponsID)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +58,7 @@ namespace Archery.Areas.BackOffice.Controllers
                {
                    tournament.Weapons.Add(db.Weapons.Find(item));
                }*/
-                //tournament.Weapons = db.Weapons.Where(x => WeaponsID.Contains(x.ID)).ToList();
+                tournament.Weapons = db.Weapons.Where(x => WeaponsID.Contains(x.ID)).ToList();
 
                 db.Tournaments.Add(tournament);
                 db.SaveChanges();
