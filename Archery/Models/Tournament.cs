@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Archery.Models
 {
@@ -21,6 +22,7 @@ namespace Archery.Models
 
         [Required]
         [Display(Name = "Début")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy HH:MM}")]
         public DateTime StartDate { get; set; }
 
         [Required]
@@ -36,6 +38,7 @@ namespace Archery.Models
 
         [Display(Name = "Description")]
         [DataType(DataType.MultilineText)]
+        [AllowHtml]
         public string Description { get; set; }
 
         [Display(Name = "Armes")]
