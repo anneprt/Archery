@@ -11,8 +11,10 @@ namespace Archery.Areas.BackOffice.Controllers
     public class DashboardController : Controller
     {
         // GET: BackOffice/Dashboard
+
         public ActionResult Index()
         {
+
             return View();
         }
     }
