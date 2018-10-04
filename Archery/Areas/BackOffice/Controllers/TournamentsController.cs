@@ -47,7 +47,7 @@ namespace Archery.Areas.BackOffice.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Name,StartDate,EndDate,ArcherCount,Price,Description")] Tournament tournament)
+        public ActionResult Create([Bind(Include = "Name,StartDate,EndDate,ArcherCount,Price,Description")] Tournament tournament)
         {
             if (ModelState.IsValid)
             {
