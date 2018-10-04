@@ -1,25 +1,28 @@
 ﻿@model Archery.Models.HomeIndexViewModel
-
+@using Archery.Helpers;
 
 <div class="row">
     @foreach (var item in Model.Tournaments)
     {
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-                <img src="..." alt="...">
+                @if (item.Pictures?.Count() > 0)
+                {
+                    @Html.PictureTournament(item.Pictures.First(), "img-circle")
+                }
                 <div class="caption">
                     <h3>@item.Name</h3>
                     <p>@item.Location</p>
                     <p>@item.StartDate.ToString("ddd dd MMM yyyy ")</p>
                     @*@if (item.Weapons != null)
-        {
-        <ul>
-            @foreach (var weapon in item.Weapons)
             {
-                <li>@weapon.Name</li>
-            }
-        </ul>
-        }*@
+            <ul>
+                @foreach (var weapon in item.Weapons)
+                {
+                    <li>@weapon.Name</li>
+                }
+            </ul>
+            }*@
                     <p><a href="#" class="btn btn-primary" role="button">Voir les détails</a> <a href="#" class="btn btn-primary" role="button">S'inscrire</a></p>
                 </div>
             </div>
