@@ -46,5 +46,8 @@ namespace Archery.Models
 
         [Display(Name = "Tireur")]
         public ICollection<Shooter> Shooters { get; set; }
+
+        [Display(Name = "Images")]
+        public ICollection<TournamentPicture> Pictures { get; set; }
     }
 }
