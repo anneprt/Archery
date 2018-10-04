@@ -176,7 +176,7 @@ namespace Archery.Areas.BackOffice.Controllers
             return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
         }
 
-        }
+        
 
         protected override void Dispose(bool disposing)
         {
