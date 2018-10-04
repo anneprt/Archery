@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Archery.Areas.BackOffice.Models;
+using Archery.Controllers;
+using Archery.Tools;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,7 +9,7 @@ using System.Web.Mvc;
 
 namespace Archery.Areas.BackOffice.Controllers
 {
-    public class AuthenticationController : Controller
+    public class AuthenticationController : BaseController
     {
         // GET: BackOffice/Authentication
         public ActionResult Login()
@@ -36,5 +39,4 @@ namespace Archery.Areas.BackOffice.Controllers
             return View();
         }
     }
-}
 }
