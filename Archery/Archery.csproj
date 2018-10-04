@@ -181,26 +181,6 @@
     <Compile Include="Migrations\201810011042376_Init.Designer.cs">
       <DependentUpon>201810011042376_Init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201810011501400_AjoutBackOffice.cs" />
-    <Compile Include="Migrations\201810011501400_AjoutBackOffice.Designer.cs">
-      <DependentUpon>201810011501400_AjoutBackOffice.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810011911187_WeaponControllerCreation.cs" />
-    <Compile Include="Migrations\201810011911187_WeaponControllerCreation.Designer.cs">
-      <DependentUpon>201810011911187_WeaponControllerCreation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810030607436_WeaponScaffolding.cs" />
-    <Compile Include="Migrations\201810030607436_WeaponScaffolding.Designer.cs">
-      <DependentUpon>201810030607436_WeaponScaffolding.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810030619033_TournamentScaffolding.cs" />
-    <Compile Include="Migrations\201810030619033_TournamentScaffolding.Designer.cs">
-      <DependentUpon>201810030619033_TournamentScaffolding.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810030625035_TournamentDescription.cs" />
-    <Compile Include="Migrations\201810030625035_TournamentDescription.Designer.cs">
-      <DependentUpon>201810030625035_TournamentDescription.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrator.cs" />
     <Compile Include="Models\BaseModel.cs" />
@@ -257,21 +237,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201810011042376_Init.resx">
       <DependentUpon>201810011042376_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810011501400_AjoutBackOffice.resx">
-      <DependentUpon>201810011501400_AjoutBackOffice.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810011911187_WeaponControllerCreation.resx">
-      <DependentUpon>201810011911187_WeaponControllerCreation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810030607436_WeaponScaffolding.resx">
-      <DependentUpon>201810030607436_WeaponScaffolding.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810030619033_TournamentScaffolding.resx">
-      <DependentUpon>201810030619033_TournamentScaffolding.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810030625035_TournamentDescription.resx">
-      <DependentUpon>201810030625035_TournamentDescription.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
