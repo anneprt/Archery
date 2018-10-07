@@ -337,21 +337,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ArcheryHelpers.cs" />
-    <Compile Include="Migrations\201810011042376_Init.cs" />
-    <Compile Include="Migrations\201810011042376_Init.Designer.cs">
-      <DependentUpon>201810011042376_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810041619003_Tournament.cs" />
-    <Compile Include="Migrations\201810041619003_Tournament.Designer.cs">
-      <DependentUpon>201810041619003_Tournament.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810041904222_Controller.cs" />
-    <Compile Include="Migrations\201810041904222_Controller.Designer.cs">
-      <DependentUpon>201810041904222_Controller.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201810042257324_TournamentPictures.cs" />
-    <Compile Include="Migrations\201810042257324_TournamentPictures.Designer.cs">
-      <DependentUpon>201810042257324_TournamentPictures.cs</DependentUpon>
+    <Compile Include="Migrations\201810070952456_Init.cs" />
+    <Compile Include="Migrations\201810070952456_Init.Designer.cs">
+      <DependentUpon>201810070952456_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrator.cs" />
@@ -419,17 +407,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201810011042376_Init.resx">
-      <DependentUpon>201810011042376_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810041619003_Tournament.resx">
-      <DependentUpon>201810041619003_Tournament.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810041904222_Controller.resx">
-      <DependentUpon>201810041904222_Controller.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201810042257324_TournamentPictures.resx">
-      <DependentUpon>201810042257324_TournamentPictures.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201810070952456_Init.resx">
+      <DependentUpon>201810070952456_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
