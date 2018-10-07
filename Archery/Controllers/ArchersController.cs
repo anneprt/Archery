@@ -61,7 +61,26 @@ namespace Archery.Controllers
         {
             if (tournamentId == null)
                 return HttpNotFound();
-            return View();
+            //ajout travail demande
+            var tournament = db.Tournaments.SingleOrDefault(x => x.ID == tournamentId);
+            Archer archer = (Archer)Session["ARCHER"];
+            int countArcher = tournament.Shooters.Count(x => x.ArcherID == archer.ID);
+
+            // controler si il reste des places pour le tournoi
+            if (tournament.HasEnoughShooter())
+            {
+                Display("Vous ne pouvez pas vous inscrire, il n'y a plus de places disponibles", MessageType.ERROR);
+                return View();
+            }
+
+            // contoler si l'archer s'est deja inscrit au tournoi
+            if (countArcher > 0)
+            {
+                Display("Vous ne pouvez pas vous inscrire plusieurs fois à un tournoi", MessageType.ERROR);
+                return View();
+            }
+
+            return View(tournament);
         }
 
         public ActionResult Login()
@@ -73,7 +92,7 @@ namespace Archery.Controllers
         public ActionResult Login(AuthenticationLoginViewModel model)
         {
             var hash = model.Password.HashMD5();
-            var archer = db.Administrators.SingleOrDefault(x => x.Mail == model.Mail && x.Password == hash);
+            var archer = db.Archers.SingleOrDefault(x => x.Mail == model.Mail && x.Password == hash);
             if (archer == null)
             {
                 Display("Login/mot de passe incorrect", MessageType.ERROR);
@@ -82,9 +101,9 @@ namespace Archery.Controllers
             else
             {
                 Session["ARCHER"] = archer;
-                if (TempData["REDIRECT"] != null)
-                    return Redirect(TempData["REDIRECT"].ToString());
-                else
+                //if (TempData["REDIRECT"] != null)
+                //    return Redirect(TempData["REDIRECT"].ToString());
+                //else
                     return RedirectToAction("index", "home");
             }
 
