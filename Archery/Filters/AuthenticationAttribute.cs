@@ -14,7 +14,7 @@ namespace Archery.Filters
 
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            filterContext.Result = new RedirectResult(@"\backoffice\authentication\login");
+            //filterContext.Result = new RedirectResult(@"\backoffice\authentication\login");
             //filterContext.Result = new RedirectToRouteResult(new System.Web.Routing.RouteValueDictionary(new{ controller="authentication", action= "login", area="backoffice" }));
 
 
@@ -29,7 +29,7 @@ namespace Archery.Filters
             }
             if (Type == "BO")
             {
-                if (filterContext.HttpContext.Session["ADMINISTRATOR"] == null)
+                if (filterContext.HttpContext.Session["ARCHER"] == null)
                 {
                     filterContext.Result = new RedirectResult(@"\backoffice\authentication\login");
                     //filterContext.Result = new RedirectToRouteResult(new System.Web.Routing.RouteValueDictionary(new{ controller="authentication", action= "login", area="backoffice" }));
@@ -43,3 +43,4 @@ namespace Archery.Filters
 
         }
     }
+}
