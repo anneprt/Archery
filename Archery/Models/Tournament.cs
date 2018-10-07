@@ -49,5 +49,10 @@ namespace Archery.Models
 
         [Display(Name = "Images")]
         public ICollection<TournamentPicture> Pictures { get; set; }
+
+        public bool HasEnoughShooter()
+        {
+            return Shooters.Count >= ArcherCount;
+        }
     }
 }
